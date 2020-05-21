@@ -47,13 +47,13 @@
 .answerBtn {
   position: relative;
   padding: 10px;
-  background-color: rgb(250, 151, 37);
+  background-color:#0b132b;
   display: inline-block;
   margin: 10px;
   outline: none;
   border: none;
   font-size: 1em;
-  color: rgb(255, 255, 255);
+  color: #dda15e;
   font-weight: bold;
   border-radius: 4px;
   cursor: pointer;
@@ -77,8 +77,8 @@
   font-size: 1.4em;
   padding: 10px;
   top: 350px;
-  background-color: rgb(46, 182, 46);
-  color: rgb(255, 255, 255);
+  background-color:#0b132b;
+  color: #dda15e;
   width: 150px;
   left: 0px;
   right: 0px;
