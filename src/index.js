@@ -45,7 +45,7 @@ class MyQuiz extends Component {
     render() {
         return(
             <div className="container">
-            <div className="title">My Quiz</div>
+            <div className="title">General Knowledge Quiz</div>
             {this.state.questionBank.length > 0 &&
                 this.state.responses < 5 && this.state.questionBank.map(({
                 question,answers,correct, questionId }) =>
