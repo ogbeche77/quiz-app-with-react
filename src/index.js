@@ -43,16 +43,20 @@ class MyQuiz extends Component {
 
 
     render() {
+      
         return(
             <div className="container">
             <div className="title">General Knowledge Quiz</div>
-            {this.state.questionBank.length > 0 &&
+           <ol className="myList">{this.state.questionBank.length > 0 &&
                 this.state.responses < 5 && this.state.questionBank.map(({
-                question,answers,correct, questionId }) =>
-                 <QuestionBox question={question} options={answers} key={questionId}
-                  selected={answer => this.computeAnswer(answer, correct)}/> )}
+                question,answers,correct, questionId }) => 
+                 
+                <li className="MyListClass"> <QuestionBox question={question} options={answers} key={questionId}
+                  selected={answer => this.computeAnswer(answer, correct)}/> </li> )} </ol>
                   {this.state.responses === 5 ? (<Result score={this.state.score}
                      playAgain={this.playAgain}/>): null }
+
+                     
             </div>
 
 
