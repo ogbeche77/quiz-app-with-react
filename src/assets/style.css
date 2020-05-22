@@ -36,6 +36,13 @@
   font-family: Helvetica;
 }
 
+.MyListClass {
+  font-size: 1em;
+  margin-bottom: 5px;
+  font-family: Helvetica;
+
+}
+
 .questionBox {
   position: relative;
   border: 1px solid rgba(0, 0, 0, 0.2);
