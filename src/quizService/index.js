@@ -323,7 +323,7 @@ const qBank = [
     questionId: "4321002"
   },
   {
-    question: "Which of the following presidents is not on Mount Rushmore?",
+    question: "Which of the following former presidents is not on Mount Rushmore?",
     answers: [
       "John F. Kennedy",
       "Theodore Roosevelt",
