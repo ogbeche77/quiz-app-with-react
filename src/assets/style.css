@@ -25,7 +25,7 @@
   background-color: #283618;
   color: rgb(255, 255, 255);
   padding: 20px;
-  font-size: 1.8em;
+  font-size: 1.7em;
   border-radius: 10px;
   text-align: center;
 }
@@ -34,6 +34,7 @@
   font-size: 1.2em;
   font-weight: bold;
   margin-bottom: 5px;
+  font-family: Helvetica;
 }
 
 .questionBox {
