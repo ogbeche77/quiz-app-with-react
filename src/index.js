@@ -51,7 +51,8 @@ class MyQuiz extends Component {
                 question,answers,correct, questionId }) =>
                  <QuestionBox question={question} options={answers} key={questionId}
                   selected={answer => this.computeAnswer(answer, correct)}/> )}
-                  {this.state.responses === 5 ? (<Result score={this.state.score} playAgain={this.playAgain}/>): null }
+                  {this.state.responses === 5 ? (<Result score={this.state.score}
+                     playAgain={this.playAgain}/>): null }
             </div>
 
 
