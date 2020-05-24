@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useState} from 'react'; //react hooks for the side effect
 
 const QuestionBox =({ question, options, selected})=> {
     const [answer, setAnswer] = useState(options);
