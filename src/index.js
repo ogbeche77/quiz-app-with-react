@@ -1,66 +1,30 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
-import './assets/style.css';
-import quizService from './quizService';
-import QuestionBox from './components/QuestionBox';
-import Result from './components/Result';
-class MyQuiz extends Component {
-    state = {
-        questionBank: [],
-        score: 0,
-        responses: 0
-    };
-    getQuestions = ()=>{
-        quizService().then(question => {
-            this.setState({
-                questionBank: question
-            })
-        })
-    }
-    computeAnswer = (answer, correctAnswer) => {
-        if (answer === correctAnswer) {
-            this.setState({
-                score:this.state.score + 1
-            });
-        }
-        this.setState({
-            responses: this.state.responses < 5 ? this.state.responses + 1 : 5
-        });
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
-    }
-    playAgain = ()=> {
-        this.getQuestions();
-        this.setState({
-            score:0,
-            responses:0
-        });
-    }
+import { Auth0Provider } from "./react-auth0-spa";
+import config from "./auth_config.json";
+import history from "./utils/history";
 
+// A function that routes the user to the right place
+// after login
+const onRedirectCallback = appState => {
+  history.push(
+    appState && appState.targetUrl
+      ? appState.targetUrl
+      : window.location.pathname
+  );
+};
 
-    componentDidMount() {
-        this.getQuestions();
-    }
+ReactDOM.render(
+  <Auth0Provider
+    domain={config.domain}
+    client_id={config.clientId}
+    redirect_uri={window.location.origin}
+    onRedirectCallback={onRedirectCallback}
+  >
+    <App />
+  </Auth0Provider>,
+  document.getElementById("root")
+);
 
-
-    render() {
-      
-        return(
-            <div className="container">
-            <div className="title">General Knowledge Quiz</div>
-           <ol className="myList">{this.state.questionBank.length > 0 &&
-                this.state.responses < 5 && this.state.questionBank.map(({
-                question,answers,correct, questionId }) => 
-                 
-                <li className="MyListClass"> <QuestionBox question={question} options={answers} key={questionId}
-                  selected={answer => this.computeAnswer(answer, correct)}/> </li> )} </ol>
-                  {this.state.responses === 5 ? (<Result score={this.state.score}
-                     playAgain={this.playAgain}/>): null }
-
-                     
-            </div>
-
-
-        );
-    }
-}
-ReactDOM.render(<MyQuiz/>, document.getElementById("root"));
