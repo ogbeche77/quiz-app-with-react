@@ -8,7 +8,7 @@ import { Router, Route, Switch } from "react-router-dom";
 import Profile from "./components1/Profile";
 import history from "./utils/history";
 import PrivateRoute from "./components1/PrivateRoute";
-
+import ExternalApi from "./views/ExternalApi";
 
 class App extends Component {
 
@@ -59,7 +59,8 @@ class App extends Component {
            </header>
            <Switch>
           <Route   path="/profile"   />
-          <PrivateRoute  path="/" component={Profile} />
+          <PrivateRoute  exact path="/" component={Profile} />
+          <PrivateRoute path="/external-api" component={ExternalApi} />
         </Switch>
             <div className="title">General Knowledge Quiz</div>
            <ol className="myList">{this.state.questionBank.length > 0 &&
