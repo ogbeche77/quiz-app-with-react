@@ -58,8 +58,8 @@ class App extends Component {
            
            </header>
            <Switch>
-          <Route  path="/profile"   />
-          <PrivateRoute exact path="/" component={Profile} />
+          <Route   path="/profile"   />
+          <PrivateRoute  path="/" component={Profile} />
         </Switch>
             <div className="title">General Knowledge Quiz</div>
            <ol className="myList">{this.state.questionBank.length > 0 &&
