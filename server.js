@@ -7,7 +7,7 @@ const jwksRsa = require("jwks-rsa");
 const app = express();
 
 // Accept cross-origin requests from the frontend app
-app.use(cors({ origin: 'https://ogbeche77.github.io/quiz-app-with-react/' }));
+app.use(cors({ origin: 'http://localhost:3000' }));
 
 // Set up Auth0 configuration
 const authConfig = {
