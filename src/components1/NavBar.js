@@ -2,6 +2,7 @@
 
 import React from "react";
 import { useAuth0 } from "../react-auth0-spa";
+import { Link } from "react-router-dom";
 
 
 const NavBar = () => {
@@ -15,6 +16,7 @@ const NavBar = () => {
 
       {isAuthenticated &&  <button className="NavBar" onClick={() => logout()}>Log out</button>}
 
+      
       
 
     </div>
