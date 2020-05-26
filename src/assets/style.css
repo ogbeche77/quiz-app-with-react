@@ -93,6 +93,11 @@ body {
   cursor: pointer;
 }
 
+.answerBtn:hover {
+  opacity: 0.9;
+  box-shadow:#dda15e;
+  
+}
 .score-board {
   position: relative;
   height: 700px;
