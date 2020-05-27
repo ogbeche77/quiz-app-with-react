@@ -58,8 +58,8 @@ class App extends Component {
            
            </header>
            <Switch>
-          <Route   path="/profile"   />
-          <PrivateRoute  exact path="/" component={Profile} />
+          <Route exact path="/"   />
+          <PrivateRoute path="/profile" component={Profile} />
           <PrivateRoute path="/external-api" component={ExternalApi} />
         </Switch>
             <div className="title">General Knowledge Quiz</div>
