@@ -17,6 +17,8 @@ class App extends Component {
         score: 0,
         responses: 0
     };
+
+
     getQuestions = ()=>{
         quizService().then(question => {
             this.setState({
@@ -24,6 +26,7 @@ class App extends Component {
             })
         })
     }
+
     computeAnswer = (answer, correctAnswer) => {
         if (answer === correctAnswer) {
             this.setState({
@@ -35,6 +38,7 @@ class App extends Component {
         });
 
     }
+    
     playAgain = ()=> {
         this.getQuestions();
         this.setState({
