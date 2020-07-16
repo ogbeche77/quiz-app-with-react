@@ -38,7 +38,7 @@ class App extends Component {
         });
 
     }
-    
+
     playAgain = ()=> {
         this.getQuestions();
         this.setState({
@@ -83,4 +83,5 @@ class App extends Component {
         );
         }
 }
+
 export default App
